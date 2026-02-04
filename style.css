@@ -1,0 +1,393 @@
+/* RÉINITIALISATION */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'Blisstwin';
+    src: url('fonts/Blisstwin-Font/Blisstwin.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* Body */
+body {
+  background-color: #F6F1EB;
+  color: #292414;
+   font-family: 'Blisstwin', 'Playfair Display', 'Inter';
+  margin: 0;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background-color: #F6F1EB;
+    padding: 90px 20px;
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.menu-left p {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #66633A;
+}
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 200px;
+}
+
+.menu-right a {
+    text-decoration: none;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    color: #66633A;
+    transition: color 0.3s;
+}
+
+/* Header Hover */
+.header:hover {
+    background-color: #A3A687;
+}
+
+.header:hover p,
+.header:hover a {
+    color: #292414;
+}
+
+.header:hover .logo img {
+    filter: brightness(0) invert(0); 
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: #F6F1EB;
+}
+
+.hero-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-gallery img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;        
+    height: 100%;     
+    object-fit: cover; 
+    object-position: center top;
+    filter: brightness(50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-family: 'Blisstwin', serif;
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.btn {
+    background-color: #A3A687;
+    color: #F6F1EB;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* HERO INFO */
+.hero-info {
+    background-color: #F6F1EB; 
+    padding: 50px 20px;
+}
+
+.hero-info .container {
+    display: flex;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.hero-info .info-item {
+    flex: 1;
+    background-color: #A3A687;
+    color: #F6F1EB;
+    padding: 50px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
+}
+
+.hero-info .info-item h3 {
+    font-family: 'Blisstwin', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-info .info-item p,
+.hero-info .info-item a {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #F6F1EB;
+    text-decoration: none;
+}
+
+.hero-info .info-item a:hover {
+    color: #66633A; 
+    font-weight: bold;
+}
+
+/* Bloc cérémonie */
+.ceremony {
+    display: flex;
+    background-color: #66633A; 
+    width: 100%;
+    padding: 60px 10%;
+    align-items: center;
+    gap: 50px;
+}
+
+.ceremony-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ceremony-left img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.ceremony-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    color: #F6F1EB;
+    align-items: center;
+}
+
+.ceremony-right h3 {
+    font-size: 2.5rem;
+    margin: 10px 0 5px 0;
+}
+
+.ceremony-right p {
+    margin: 0;
+}
+
+.ceremony-right p.horaire {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.ceremony-right p.lieu {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-align: center;
+    
+}
+
+.ceremony-right a {
+    font-size: 1rem;
+    color: #F6F1EB;
+    text-decoration: underline;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.ceremony-right a:hover {
+    color: #A3A687;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #F6F1EB;
+    padding: 60px 20px 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Partie gauche */
+.footer-left p {
+    font-size: 1rem;
+    font-family: 'Playfair Display';
+    color: #66633A;
+}
+
+.footer-left a {
+    color: #66633A;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'Playfair Display';
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+    color: #A3A687;
+}
+
+/* Partie centre */
+.footer-center {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-logo {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.footer-center p {
+    font-size: 0.9rem;
+    color: #66633A;
+    font-family: 'Playfair Display';
+}
+
+/* Partie droite */
+.footer-right {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-right a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #66633A;
+    transition: color 0.3s;
+    font-family: 'Playfair Display';
+}
+
+.footer-right a:hover {
+    color: #A3A687;
+}
+
+/* MEDIA QUERY */
+/* TABLETTE : largeur ≤ 1024px */
+@media (max-width: 1024px) {
+    /* Header */
+    .menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .logo {
+        position: static;
+        transform: none;
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    /* Hero info */
+    .hero-info .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Cérémonie */
+    .ceremony {
+        flex-direction: column;
+        padding: 50px 10%;
+        gap: 30px;
+    }
+    .ceremony-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Footer : center toujours en bas */
+    .footer-container {
+        display: flex;
+        flex-direction: column-reverse; /* center en bas */
+        align-items: center;
+        gap: 20px;
+    }
+    .footer-left, .footer-right {
+        order: 0; /* gauche et droite au-dessus */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+    .footer-center {
+        order: 1; /* reste en bas */
+    }
+}
