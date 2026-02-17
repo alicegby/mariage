@@ -3,111 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariage d'Alice &amp; Bastien</title>
+    <title>Mariage Alice &amp; Bastien - 15 août 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header class="header">
-        <nav class="menu">
-            <div class="menu-left">
-                <p>Le mariage d'Alice &amp; Bastien</p>
+    <main>
+
+        <header class="header">
+            <img src="images/blason.png" class="blason">
+            <nav class="menu-links">
+                <a href="#intro">Accueil</a>
+                <a href="#programme">Programme</a>
+                <a href="#informations">Informations</a>
+                <a href="#histoire">Notre Histoire</a>
+                <a href="#">Liste de mariage</a>
+                <a href="mailto:alice.gruby@gmail.com">Contact</a>
+            </nav>
+        </header>
+
+        <section id="intro" class="intro">
+            <img src="images/header.jpeg" class="intro-img">
+            <h1>Mariage d'Alice &amp; Bastien</h1>
+            <h2>15 août 2025</h2>
+            <img src="images/blason.png" class="blason-intro">
+        </section>
+
+        <section id="programme" class="programme animate-block">
+            <h2>Jour J</h2>
+            <p>Votre présence est attendue à 15h30 au <a href="https://maps.app.goo.gl/M6xdReCMoyTBY2eo9">Moulin de l'Arguenon</a></p>
+            
+            <div class="programme-container">
+                <div class="programme-event">
+                    <img src="icones/ceremonie.png" alt="Cérémonie">
+                    <h3>Cérémonie</h3>
+                    <p>16h</p>
+                </div>
+                <div class="programme-event">
+                    <img src="icones/vin_honneur.png" alt="Vin d'honneur">
+                    <h3>Vin d'honneur</h3>
+                    <p>17h</p>
+                </div>
+                <div class="programme-event">
+                    <img src="icones/diner.png" alt="Dîner">
+                    <h3>Dîner</h3>
+                    <p>20h</p>
+                </div>
+                <div class="programme-event">
+                    <img src="icones/dessert.png" alt="Pièce montée &amp; Champagne">
+                    <h3>Pièce montée</h3>
+                    <p>23h</p>
+                </div>
+                <div class="programme-event">
+                    <img src="icones/bal.png" alt="Ouverture de bal">
+                    <h3>Ouverture de bal</h3>
+                    <p>00h</p>
+                </div>
+                <div class="programme-event">
+                    <img src="icones/soiree.png" alt="Soirée dansante">
+                    <h3>Soirée dansante</h3>
+                    <p>jusqu'à 4h du matin</p>
+                </div>
             </div>
+        </section>
 
-            <div class="logo">
-                <img src="images/blason.png" alt="Blason BAH">
+        <section id="informations" class="details animate-block">
+            <h2>Informations</h2>
+            <div class="grid">
+                <div class="dresscode">
+                    <h3>Dress Code</h3>
+                    <p>Aucun dress code strict ne vous est imposé. Venez simplement élégant(e) et raffiné(e). Mesdames, le blanc est réservé à la mariée.</p>
+                </div>
+
+                <div class="enfants">
+                    <h3>Enfants</h3>
+                    <p>
+                        Les enfants disposeront d’un espace de jeux dédié pour s’amuser en toute sécurité. Ils restent cependant sous la responsabilité de leurs parents. Un menu enfant est prévu pour ravir leurs papilles.
+                        Pour toute question ou besoin particulier, n’hésitez pas à <a href="mailto:alice.gruby@gmail.com?subject=Informations%20Enfants%20-%20Mariage%20Alice%20%26%20Bastien">nous contacter</a>.
+                    </p>
+                </div>
+
+                <div class="allergies">
+                    <h3>Allergies</h3>
+                    <p>
+                        Afin de nous assurer que tous vous puissiez profiter des réjouissances, pourriez-vous nous signaler vos éventuelles allergies ou intolérances alimentaires ? <br>
+                        En nous contactant <a href="mailto:alice.gruby@gmail.com?subject=Allergies%20-%20Mariage%20Alice%20%26%20Bastien">ici</a>.
+                    </p>
+                </div>
+
+                <div class="herbergement">
+                    <h3>Hébergement</h3>
+                    <p>
+                        Besoin d'un lieu où séjourner ? Cliquez <a href="hebergement.html">ici</a> pour découvrir les hébergements disponibles à proximité.
+                    </p>
+                </div>
+
+                <div class="stationnement">
+                    <h3>Stationnement</h3>
+                    <p>
+                        Vous pourrez vous garer sur le parking du Moulin. Nous vous encourageons cependant à privilégier le covoiturage afin d'éviter de stationner dans l'herbe. <br>
+                        En fin de soirée, si vous n'êtes pas en état de conduire, assurez-vous qu'une personne sobre puisse vous raccompagner, ou contactez un taxi. <br>
+                        <a href="documents/plan.pdf" download="plan.pdf">Voir le plan du lieu</a>
+                    </p>
+                </div>
+
+                <div class="cadeau">
+                    <h3>Liste de mariage</h3>
+                    <p>
+                        Votre présence à nos côtés est le plus beau des cadeaux. Si toutefois vous souhaitez nous accompagner d’une attention supplémentaire, nous avons créé une liste qui nous aidera à construire notre nouveau foyer et à réaliser quelques projets qui nous tiennent à cœur.
+                        Chaque geste, petit ou grand, contribuera à écrire les premières pages de notre vie de jeunes mariés.
+                        Merci du fond du cœur pour votre générosité, votre bienveillance et l’amour que vous nous portez. <br>
+                        <a href="#">Voir notre liste de mariage</a>
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <div class="menu-right">
-                <a href="#home">Accueil</a>
-                <a href="#infos">Infos</a>
-                <a href="#news">News</a>
+        <section id="histoire" class="notre-histoire animate-block">
+            <div class="histoire-container">
+                <div class="histoire-image">
+                    <img src="images/bwfiancailles.jpeg" alt="Alice &amp; Bastien">
+                </div>
+                <div class="histoire-texte">
+                    <h2>Notre histoire</h2>
+                    <p>
+                        Découvrez comment tout a commencé pour nous, nos moments forts, nos rires et nos aventures.
+                        Chaque étape nous a rapprochés et nous a conduits à ce jour unique.
+                    </p>
+                    <a href="histoire.html" class="btn">Découvrir</a>
+                </div>
             </div>
-        </nav>
-    </header>
+        </section>
 
-    <section id="home" class="hero">
-        <div class="hero-gallery">
-            <img src="images/img1.png">
-            <img src="images/img2.png">
-            <img src="images/img3.png">
-            <img src="images/img4.png">
-            <img src="images/img5.png">
-            <img src="images/img6.png">
-            <img src="images/img7.png">
-            <img src="images/img8.png">
-            <img src="images/img9.png">
-            <img src="images/img10.png">
-            <img src="images/img11.png">
-        </div>
-
-        <div class="hero-content">
-            <h1>Alice &amp; Bastien</h1>
-            <p>15 août 2026</p>
-            <a href="#infos" class="btn">Voir les dernières informations</a>
-        </div>
-    </section>
-
-    <section class="hero-info">
-        <div class="container">
-            <div class="info-item">
-                <h3>Date</h3>
-                <p>15 août 2026</p>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <a href="#intro">Accueil</a>
+                    <a href="#programme">Programme</a>
+                    <a href="#informations">Informations</a>
+                    <a href="#">Liste de mariage</a>
+                </div>
+                <div class="footer-center">
+                    <img src="images/blason.png" alt="Blason Mariage" class="footer-blason">
+                </div>
+                <div class="footer-right">
+                    <a href="hebergement.html">Hébergement</a>
+                    <a href="histoire.html">Notre histoire</a>
+                    <a href="#">Newsletters</a>
+                    <a href="mailto:alice.gruby@gmail.com">Contact</a>
+                </div>
             </div>
-            <div class="info-item">
-                <h3>Lieu</h3>
-                <a href="https://maps.app.goo.gl/XpM1C4VgbD9JNnbb9" target="_blank" rel="noopener">
-                    Moulin de l'Arguenon
-                </a>
-            </div>
-            <div class="info-item">
-                <h3>RSVP</h3>
-                <p>Réponse avant le 1er Avril</p>
-            </div>
-        </div>
-    </section>
+            <p class="footer-credit">&copy; 2026 Alice &amp; Bastien | Site conçu par Alice</p>
+        </footer>
 
-    <section class="ceremony">
-        <div class="ceremony-left">
-            <img src="images/fiancailles.jpeg" alt="Nos fiançailles">
-        </div>
-        <div class="ceremony-right">
-            <h3>Cérémonie</h3>
-            <p class="horaire">16 h 00</p>
-            <p class="lieu">Jardin du Moulin <br> Moulin de l'Arguenon</p>
-            <h3>Vin d'honneur</h3>
-            <p class="horaire"> 17 h 00</p>
-            <h3>Réception</h3>
-            <p class="horaire">20 h 00</p>
-            <p class="lieu">Salle de réception <br> Moulin de l'Arguenon</p>
-            <a href="#plan" target="_blank" rel="noopener">
-                Voir le plan
-            </a>
-        </div>
-    </section>
+    </main>
 
-    <footer class="footer">
-    <div class="footer-container">
-        <!-- Contact à gauche -->
-        <div class="footer-left">
-            <p>Vous avez des questions ? <a href="mailto:alice.gruby@gmail.com">Écrivez-nous</a></p>
-        </div>
-
-        <!-- Logo et texte centré -->
-        <div class="footer-center">
-            <img src="images/blason.png" alt="Blason BAH" class="footer-logo">
-            <p>&copy; 2026 Alice &amp; Bastien / Conçu par Alice</p>
-        </div>
-
-        <!-- Liens à droite -->
-        <div class="footer-right">
-            <a href="#home">Accueil</a>
-            <a href="#infos">Infos</a>
-            <a href="#ceremony">Cérémonie</a>
-        </div>
-    </div>
-</footer>
-    
     <script src="script.js"></script>
 </body>
 </html>

@@ -5,270 +5,345 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* FONTS */
 @font-face {
-    font-family: 'Blisstwin';
-    src: url('fonts/Blisstwin-Font/Blisstwin.ttf') format('truetype');
+    font-family: 'Amoresa';
+    src: url('fonts/Amoresa/Amoresa_Regular.otf') format('opentype');
     font-display: swap;
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Playfair Display';
     src: url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Inter';
     src: url('fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
     font-display: swap;
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Body */
-body {
-  background-color: #F6F1EB;
-  color: #292414;
-   font-family: 'Blisstwin', 'Playfair Display', 'Inter';
-  margin: 0;
+@font-face {
+    font-family: 'Parfumerie';
+    src: url('fonts/Parfumerie_Script/parfumerie-script-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Perandory';
+    src: url('fonts/PerandorySemiCondensed.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Header */
+/* HEADER */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #F6F1EB;
-    padding: 90px 20px;
-    position: relative;
-}
-
-.menu {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
+    padding: 20px 50px;
+    background: rgba(0,0,0,0.3); /* semi-transparent */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
-.menu-left p {
-    font-family: 'Playfair Display', sans-serif;
+/* Blason à gauche */
+.blason {
+    height: 100px;
+}
+
+/* Menu links centrés */
+.menu-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    margin: 0;
-    color: #66633A;
-}
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
-.logo img {
-    height: 200px;
-}
-
-.menu-right a {
+.menu-links a {
     text-decoration: none;
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 1.2rem;
-    margin-left: 20px;
-    color: #66633A;
+    color: #F6F1EB;
     transition: color 0.3s;
 }
 
-/* Header Hover */
-.header:hover {
-    background-color: #A3A687;
+.menu-links a:hover {
+    color: #66633a;
 }
 
-.header:hover p,
-.header:hover a {
-    color: #292414;
-}
-
-.header:hover .logo img {
-    filter: brightness(0) invert(0); 
-}
-
-/* HERO */
-.hero {
+/* INTRO */
+.intro {
     position: relative;
-    min-height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    width: 100%;
+    height: 900px; /* ou min-height: 100vh pour écran plein */
+    max-height: 100vh;
     overflow: hidden;
-    color: #F6F1EB;
 }
 
-.hero-gallery {
+/* Image de fond */
+.intro-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover; /* remplit tout l’espace sans déformer */
+    z-index: 0;        /* derrière tout le contenu */
 }
 
-.hero-gallery img {
+/* Texte centré */
+.intro h1,
+.intro h2,
+.blason-intro {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;        
-    height: 100%;     
-    object-fit: cover; 
-    object-position: center top;
-    filter: brightness(50%);
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-content h1 {
-    font-family: 'Blisstwin', serif;
-    font-size: 3rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-.btn {
-    background-color: #A3A687;
+    left: 50%;
+    transform: translateX(-50%);
     color: #F6F1EB;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 5px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-/* HERO INFO */
-.hero-info {
-    background-color: #F6F1EB; 
-    padding: 50px 20px;
-}
-
-.hero-info .container {
-    display: flex;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.hero-info .info-item {
-    flex: 1;
-    background-color: #A3A687;
-    color: #F6F1EB;
-    padding: 50px 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-width: 200px;
-}
-
-.hero-info .info-item h3 {
-    font-family: 'Blisstwin', serif;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.hero-info .info-item p,
-.hero-info .info-item a {
-    font-size: 1.1rem;
     margin: 0;
-    color: #F6F1EB;
+    z-index: 1; /* devant l'image */
+}
+
+.intro h1 {
+    top: 35%;
+    font-family: 'Amoresa', serif;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.intro h2 {
+    top: 45%;
+    font-family: 'Parfumerie', serif;
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.blason-intro {
+    top: 55%;
+    height: 150px;
+    width: 150px;
+}
+
+/* SECTION PROGRAMME */
+.programme {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.programme h2 {
+    font-family: 'Amoresa', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #66633A;
+}
+
+.programme p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #66633A;
+}
+
+.programme p a {
+    color: #A3A687;
     text-decoration: none;
 }
 
-.hero-info .info-item a:hover {
-    color: #66633A; 
-    font-weight: bold;
+.programme p a:hover {
+    text-decoration: underline;
 }
 
-/* Bloc cérémonie */
-.ceremony {
+/* Conteneur flex pour tous les événements */
+.programme-container {
     display: flex;
-    background-color: #66633A; 
-    width: 100%;
-    padding: 60px 10%;
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* permet le retour à la ligne si trop petit écran */
     gap: 50px;
 }
 
-.ceremony-left {
-    flex: 1;
+/* Chaque événement */
+.programme-event {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    max-width: 150px; /* largeur max par événement */
 }
 
-.ceremony-left img {
+.programme-event img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.programme-event h3 {
+    font-family: 'Perandory', serif;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #66633A;
+    text-align: center;
+}
+
+.programme-event p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #66633A;
+    text-align: center;
+}
+
+/* INFORMATIONS */
+.details {
+    background-color: #F0EFEA; /* fond doux, élégant */
+    padding: 60px 20px;
     width: 100%;
-    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    color: #292414;
+}
+
+/* H2 en haut à droite */
+.details h2 {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    font-family: 'Amoresa', serif;
+    font-size: 3rem;
+    color: #66633A;
+}
+
+/* Grid des infos */
+.details > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 100px; /* laisse de l'espace pour le h2 */
+}
+
+.details > div > div {
+    background-color: #fff;
+    padding: 30px 20px;
     border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+/* Chaque bloc info */
+.details .dresscode,
+.details .enfants,
+.details .allergies,
+.details .herbergement,
+.details .stationnement {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+/* Titres H3 */
+.details h3 {
+    font-family: 'Amoresa', serif;
+    font-size: 1.8rem;
+    color: #66633A;
+    margin-bottom: 10px;
+}
+
+/* Paragraphes */
+.details p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #292414;
+}
+
+/* Liens dans les paragraphes */
+.details a {
+    color: #A3A687;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.details a:hover {
+    color: #66633A;
+}
+
+/* NOTRE HISTOIRE */
+.notre-histoire {
+    padding: 80px 20px;
+}
+
+.histoire-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* pour le responsive */
+}
+
+.histoire-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
     object-fit: cover;
 }
 
-.ceremony-right {
+.histoire-texte {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-    color: #F6F1EB;
-    align-items: center;
 }
 
-.ceremony-right h3 {
+.histoire-texte h2 {
+    font-family: 'Amoresa', serif;
     font-size: 2.5rem;
-    margin: 10px 0 5px 0;
+    margin-bottom: 20px;
+    color: #66633A;
 }
 
-.ceremony-right p {
-    margin: 0;
+.histoire-texte p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #292414;
+    margin-bottom: 25px;
 }
 
-.ceremony-right p.horaire {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.ceremony-right p.lieu {
+.histoire-texte .btn {
     font-size: 1rem;
-    font-style: italic;
-    margin-bottom: 15px;
-    text-align: center;
-    
 }
 
-.ceremony-right a {
-    font-size: 1rem;
-    color: #F6F1EB;
-    text-decoration: underline;
-    width: fit-content;
-    margin-top: 10px;
-}
-
-.ceremony-right a:hover {
+.histoire-texte a {
     color: #A3A687;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.histoire-texte a:hover {
+    color: #66633A;
 }
 
 /* FOOTER */
 .footer {
-    background-color: #F6F1EB;
-    padding: 60px 20px 40px 20px;
+    background-color: #F0EFEA; /* couleur douce pour mariage */
+    padding: 40px 20px 20px 20px;
+    font-family: 'Playfair Display', serif;
+    color: #66633A;
 }
 
 .footer-container {
@@ -277,117 +352,338 @@ body {
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 30px;
+    flex-wrap: wrap; /* responsive */
+    gap: 20px;
 }
 
-/* Partie gauche */
-.footer-left p {
-    font-size: 1rem;
-    font-family: 'Playfair Display';
-    color: #66633A;
+/* Colonne gauche et droite */
+.footer-left,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.footer-left a {
-    color: #66633A;
-    font-weight: 500;
+.footer-left a,
+.footer-right a {
     text-decoration: none;
-    font-family: 'Playfair Display';
+    color: #66633A;
+    transition: color 0.3s;
 }
 
-.footer-left a:hover {
-    text-decoration: underline;
-    color: #A3A687;
+.footer-left a:hover,
+.footer-right a:hover {
+    color: #A3A687; /* couleur accent du mariage */
 }
 
-/* Partie centre */
+/* Colonne centre */
 .footer-center {
     text-align: center;
     flex: 1;
 }
 
-.footer-logo {
-    height: 100px;
-    margin-bottom: 10px;
+.footer-blason {
+    height: 80px;
+    width: auto;
+    display: inline-block;
 }
 
-.footer-center p {
+/* Crédit en bas */
+.footer-credit {
+    text-align: center;
+    margin-top: 20px;
     font-size: 0.9rem;
     color: #66633A;
-    font-family: 'Playfair Display';
 }
 
-/* Partie droite */
-.footer-right {
-    display: flex;
-    gap: 20px;
+/* JS */
+/* Bloc animé au scroll */
+.animate-block {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.footer-right a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: #66633A;
-    transition: color 0.3s;
-    font-family: 'Playfair Display';
-}
-
-.footer-right a:hover {
-    color: #A3A687;
+/* Quand visible */
+.animate-block.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* MEDIA QUERY */
-/* TABLETTE : largeur ≤ 1024px */
-@media (max-width: 1024px) {
-    /* Header */
-    .menu {
-        flex-direction: column;
-        gap: 20px;
+/* Tablette */
+@media screen and (max-width: 1024px) {
+    /* HEADER */
+    .header {
+        padding: 15px 30px;
     }
-    .logo {
-        position: static;
-        transform: none;
+    .menu-links {
+        gap: 20px;
+        font-size: 1rem;
+    }
+    .blason {
+        height: 80px;
     }
 
-    /* Hero */
-    .hero-content h1 {
+    /* INTRO */
+    .intro {
+        height: 700px;
+    }
+    .intro h1 {
+        font-size: 2.5rem;
+        top: 30%;
+    }
+    .intro h2 {
+        font-size: 3rem;
+        top: 40%;
+    }
+    .blason-intro {
+        top: 50%;
+        height: 120px;
+        width: 120px;
+    }
+
+    /* PROGRAMME */
+    .programme h2 {
         font-size: 2.5rem;
     }
-    .hero-content p {
-        font-size: 1.2rem;
+    .programme p {
+        font-size: 1.1rem;
     }
-
-    /* Hero info */
-    .hero-info .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Cérémonie */
-    .ceremony {
-        flex-direction: column;
-        padding: 50px 10%;
+    .programme-container {
         gap: 30px;
+        justify-content: flex-start;
     }
-    .ceremony-right {
+    .programme-event {
+        max-width: 120px;
+    }
+    .programme-event img {
+        width: 120px;
+        height: 120px;
+    }
+    .programme-event h3 {
+        font-size: 1.3rem;
+    }
+    .programme-event p {
+        font-size: 0.95rem;
+    }
+
+    /* INFORMATIONS */
+    .details h2 {
+        font-size: 2.5rem;
+        right: 50px;
+    }
+    .details > div {
+        grid-template-columns: 1fr; /* empile en colonne */
+        gap: 20px;
+        margin-top: 120px;
+    }
+
+    /* NOTRE HISTOIRE */
+    .histoire-container {
+        flex-direction: column;
+        gap: 25px;
+        max-width: 90%;
+    }
+    .histoire-image img {
+        max-width: 60%;
         align-items: center;
+    }
+    .histoire-texte h2 {
+        font-size: 2rem;
+    }
+    .histoire-texte p,
+    .histoire-texte a {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    /* HEADER */
+    .header {
+        padding: 10px 15px;
+    }
+    .menu-links {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1rem;
+    }
+    .blason {
+        height: 60px;
+    }
+
+    /* INTRO : version mobile avec textes empilés et centrés verticalement */
+    .intro {
+        height: auto; /* laisse le contenu décider de la hauteur */
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 15px;
+        position: relative;
+    }
+    .intro h1,
+    .intro h2,
+    .blason-intro {
+        position: static; /* on enlève le absolute */
+        transform: none;
+        margin-bottom: 15px;
+        color: #F6F1EB;
+        z-index: 1;
+    }
+    .intro h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    .intro h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    .blason-intro {
+        height: 100px;
+        width: 100px;
+    }
+
+    /* PROGRAMME */
+    .programme {
+        text-align: center;
+        padding: 60px 15px;
+    }
+    .programme-container {
+        justify-content: center;
+        gap: 25px;
+    }
+
+    /* INFORMATIONS */
+    .details h2 {
+        font-size: 2rem;
+        position: static;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .details > div {
+        grid-template-columns: 1fr; /* empile en colonne */
+        gap: 20px;
+        margin-top: 0;
+    }
+
+    /* NOTRE HISTOIRE */
+    .histoire-container {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+    .histoire-image img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    .histoire-texte h2 {
+        font-size: 1.8rem;
+    }
+    .histoire-texte p,
+    .histoire-texte a {
+        font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
         text-align: center;
     }
 
-    /* Footer : center toujours en bas */
-    .footer-container {
-        display: flex;
-        flex-direction: column-reverse; /* center en bas */
-        align-items: center;
-        gap: 20px;
-    }
-    .footer-left, .footer-right {
-        order: 0; /* gauche et droite au-dessus */
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-    }
+    /* Blason en haut */
     .footer-center {
-        order: 1; /* reste en bas */
+        order: 0; /* premier élément */
+        margin-bottom: 15px;
+    }
+    .footer-blason {
+        height: 80px;
+        width: auto;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    /* Liens gauche en dessous, centrés */
+    .footer-left {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Liens droite en dessous, centrés */
+    .footer-right {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Crédit tout en bas */
+    .footer-credit {
+        order: 3;
+        font-size: 0.8rem;
+        margin-top: 15px;
+        text-align: center;
+    }
+}
+
+/* Très petit mobile */
+@media screen and (max-width: 480px) {
+    .intro h1 {
+        font-size: 1.8rem;
+    }
+    .intro h2 {
+        font-size: 2rem;
+    }
+    .blason-intro {
+        height: 80px;
+        width: 80px;
+    }
+
+    .programme h2 {
+        font-size: 1.8rem;
+    }
+    .programme p {
+        font-size: 0.95rem;
+    }
+
+    .histoire-texte h2 {
+        font-size: 1.5rem;
+    }
+    .histoire-texte p,
+    .histoire-texte a {
+        font-size: 0.85rem;
+    }
+
+    .details h2 {
+        font-size: 1.5rem;
+    }
+    .details p {
+        font-size: 0.85rem;
+    }
+
+    .programme-event h3 {
+        font-size: 1.1rem;
+    }
+    .programme-event p {
+        font-size: 0.85rem;
+    }
+
+    .footer-blason {
+        height: 60px;
+    }
+    .footer-credit {
+        font-size: 0.75rem;
     }
 }

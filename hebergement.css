@@ -1,0 +1,270 @@
+/* HEADER */
+.header {
+    opacity: 1 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #F6F1EB; 
+    transition: none;
+}
+
+/* Blason à gauche */
+.blason {
+    height: 100px;
+}
+
+/* Menu links centrés */
+.menu-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #66633a;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #A3A687;
+}
+
+
+/* HÉBERGEMENT */
+.hebergement-conseils {
+    padding: 150px 5% 50px;  /* moins de marge sur les côtés */
+    font-family: 'Playfair Display', serif;
+}
+
+.hebergement-conseils h2 {
+    text-align: center;
+    font-family: 'Amoresa', sans-serif;
+    color: #66633a;
+    font-size: 3rem;
+    font-weight: 100;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.hebergement-conseils p {
+    font-size: 1.2rem;
+    color: #66633A;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+/* Conteneur des cartes */
+.conseils-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Chaque carte */
+.conseil-card {
+    background-color: #F0EFEA;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conseil-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
+.conseil-card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.conseil-card h3 {
+    font-family: 'Amoresa', serif;
+    font-size: 1.5rem;
+    color: #66633A;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.conseil-card p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #292414;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.conseil-card a {
+    text-decoration: none;
+    color: #A3A687;
+    transition: color 0.3s;
+}
+
+.conseil-card a:hover {
+    color: #66633A;
+}
+
+/* MEDIA QUERY */
+/* Tablettes */
+@media screen and (max-width: 1024px) {
+    /* HEADER */
+    .header {
+        padding: 15px 30px;
+    }
+    .menu-links {
+        gap: 20px;
+        font-size: 1.1rem;
+    }
+    .blason {
+        height: 80px;
+    }
+
+    /* Section hébergement conseils */
+    .hebergement-conseils {
+        padding: 120px 5% 40px;
+    }
+    .hebergement-conseils h2 {
+        font-size: 2.5rem;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .hebergement-conseils p {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+
+    /* Cartes */
+    .conseils-container {
+        gap: 25px;
+    }
+    .conseil-card {
+        width: 45%;
+        padding: 25px 15px;
+    }
+    .conseil-card img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 15px;
+    }
+    .conseil-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .conseil-card p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 768px) {
+    /* HEADER */
+    .header {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-links {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.95rem;
+        justify-content: center;
+    }
+    .blason {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    /* Section hébergement conseils */
+    .hebergement-conseils {
+        padding: 80px 10px 30px;
+    }
+    .hebergement-conseils h2 {
+        font-size: 2rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .hebergement-conseils p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* Cartes */
+    .conseils-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .conseil-card {
+        width: 80%;
+        padding: 20px 15px;
+    }
+    .conseil-card img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+    .conseil-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .conseil-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+    /* HEADER */
+    .header {
+        padding: 8px 15px;
+    }
+    .menu-links {
+        font-size: 0.85rem;
+        gap: 5px;
+    }
+    .blason {
+        height: 50px;
+        margin-bottom: 8px;
+    }
+
+    /* Section hébergement conseils */
+    .hebergement-conseils h2 {
+        font-size: 1.8rem;
+    }
+    .hebergement-conseils p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    /* Cartes */
+    .conseil-card {
+        width: 95%;
+        padding: 15px 10px;
+    }
+    .conseil-card img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .conseil-card h3 {
+        font-size: 1.1rem;
+    }
+    .conseil-card p {
+        font-size: 0.85rem;
+    }
+}
+

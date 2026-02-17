@@ -1,0 +1,246 @@
+/* HEADER */
+.page-histoire .header {
+    opacity: 1 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #F6F1EB; 
+    transition: none;
+}
+
+/* Blason à gauche */
+.blason {
+    height: 100px;
+}
+
+/* Menu links centrés */
+.menu-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #66633a;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #A3A687;
+}
+
+/* HISTOIRE SECTION */
+.histoire {
+    padding: 150px 5% 50px;  /* moins de marge sur les côtés */
+    font-family: 'Playfair Display', serif;
+}
+
+.histoire h2 {
+    text-align: center;
+    font-family: 'Amoresa', sans-serif;
+    color: #66633a;
+    font-size: 3rem;
+    font-weight: 100;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Timeline container */
+.timeline-container {
+    position: relative;
+    max-width: 1800px; /* largeur réduite pour moins de marges */
+    margin: 0 auto;
+    padding: 30px 10px;
+}
+
+/* Ligne verticale centrale */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 50px; /* s'arrête avant le bloc final */
+    left: 50%;
+    width: 4px;
+    background-color: #A3A687;
+    transform: translateX(-50%);
+}
+
+/* Chaque événement */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+/* Décaler à gauche ou droite */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* Ligne horizontale qui relie le point au contenu */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 40px; /* centre avec le point */
+    width: 20px; /* longueur de la ligne horizontale */
+    height: 4px;
+    background-color: #A3A687;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::after {
+    right: 0;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: 0;
+}
+
+/* Contenu */
+.timeline-content {
+    background-color: #F6F1EB;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 90%;
+}
+
+.timeline-content h3 {
+    font-family: 'Amoresa', sans-serif;
+    font-size: 1.5rem;
+    color: #66633A;
+}
+
+.timeline-content img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Bloc final "ligne d'arrivée" */
+.timeline-item.timeline-end {
+    width: 100%;
+    left: 0 !important;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.timeline-item.timeline-end .timeline-content {
+    background-color: #A3A687; /* couleur de la ligne centrale */
+    color: #fff;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 80%;
+}
+
+.timeline-item.timeline-end::after {
+    content: none; /* supprime la ligne horizontale */
+}
+
+.timeline-item.timeline-end .timeline-date {
+    display: none; /* supprime la date */
+}
+
+.timeline-date {
+    font-family: 'Parfumerie', sans-serif;
+    font-size: 3rem;
+    color: #66633A;
+}
+
+/* JS */
+/* État initial caché et décalé */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+/* Quand visible */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MEDIA QUERY */
+/* Tablettes */
+@media screen and (max-width: 1024px) {
+    .timeline-container::before {
+        left: 20px;
+        transform: none;
+    }
+    .timeline-item {
+        width: calc(100% - 60px);
+        left: 40px !important; /* tous à droite */
+        text-align: left !important;
+        margin-bottom: 30px;
+    }
+    .timeline-item::after { display: none; }
+    .timeline-content { max-width: 100%; }
+    .timeline-date { font-size: 2rem; margin-bottom: 5px; }
+}
+
+/* Mobiles */
+@media screen and (max-width: 768px) {
+    /* Supprimer la ligne verticale */
+    .timeline-container::before {
+        display: none;
+    }
+
+    /* Timeline items plein écran en colonne */
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left !important;
+        margin-bottom: 30px;
+    }
+
+    /* Supprimer les traits horizontaux */
+    .timeline-item::after {
+        display: none;
+    }
+
+    /* Contenu */
+    .timeline-content {
+        max-width: 100%;
+        padding: 15px 20px;
+    }
+
+    /* Dates plus petites */
+    .timeline-date {
+        font-size: 2.1rem;
+        margin-bottom: 5px;
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+    .histoire h2 {
+        font-size: 2rem;
+    }
+    .timeline-date {
+        font-size: 2rem;
+    }
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+    .timeline-content {
+        padding: 10px 15px;
+    }
+}
