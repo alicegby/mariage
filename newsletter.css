@@ -1,0 +1,210 @@
+/* HEADER */
+.page-histoire .header {
+    opacity: 1 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #F6F1EB; 
+    transition: none;
+}
+
+/* Blason à gauche */
+.blason {
+    height: 100px;
+}
+
+/* Menu links centrés */
+.menu-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #66633a;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #A3A687;
+}
+
+/* MENU BURGER */
+.burger-menu {
+    display: none; /* caché sur desktop */
+    width: 30px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    display: block;
+    height: 3px;
+    background-color: #66633a;
+    border-radius: 2px;
+}
+
+/* Overlay menu */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(246,241,235,0.95);
+    display: none; /* caché par défaut */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* Contenu overlay en colonne */
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.overlay-content a {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #66633a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.overlay-content a:hover {
+    color: #A3A687;
+}
+
+/* Croix de fermeture */
+.close-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #66633a;
+}
+
+/* SECTION NEWSLETTER */
+.newsletter-section {
+    padding: 150px 5% 50px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.newsletter-section h2 {
+    text-align: center;
+    font-family: 'Amoresa', sans-serif;
+    color: #66633a;
+    font-size: 3rem;
+    font-weight: 100;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.latest-newsletter {
+    background-color: #F0EFEA;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+.latest-newsletter h3 {
+    font-family: 'Amoresa', serif;
+    font-size: 2rem;
+    color: #66633a;
+    margin-bottom: 20px;
+}
+
+.latest-newsletter p {
+    font-size: 1.2rem;
+    color: #292414;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.latest-newsletter a {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #A3A687;
+    text-decoration: none;
+    border: 1px solid #A3A687;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.latest-newsletter a:hover {
+    background-color: #A3A687;
+    color: #F6F1EB;
+}
+
+.show-newsletter-btn {
+    background-color: #66633a;
+    color: #F0EFEA;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.show-newsletter-btn:hover {
+    background-color: #A3A687;
+}
+
+/* Anciennes newsletters (détails) */
+details {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1rem;
+    color: #66633a;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+details ul li {
+    margin-bottom: 10px;
+}
+
+details ul li a {
+    color: #A3A687;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+details ul li a:hover {
+    color: #66633a;
+}

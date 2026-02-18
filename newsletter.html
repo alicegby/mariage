@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mariage Alice &amp; Bastien - 15 août 2026</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="hebergement.css">
+    <link rel="stylesheet" href="newsletter.css">
 </head>
 <body class="page-histoire">
     <main>
@@ -26,6 +26,7 @@
                 <span></span>
                 <span></span>
             </div>
+
             <div class="overlay-menu">
                 <div class="overlay-content">
                     <span class="close-overlay">&times;</span>
@@ -39,33 +40,28 @@
             </div>
         </header>
 
-        <section class="hebergement-conseils">
-            <h2>Conseils pour se loger</h2>
-            <p>Pour que votre séjour se passe au mieux, voici quelques recommandations et astuces pour choisir votre hébergement</p>
+        <section class="newsletter-section">
+            <h2>Newsletters</h2>
 
-            <div class="conseils-container">
-                <div class="conseil-card animate-block">
-                    <img src="icones/moulin.png" alt="Proximité">
-                    <h3>Au Moulin</h3>
-                    <p>
-                        Si vous souhaitez loger sur le lieu, veuillez remplir le formulaire en cliquant <a href="https://forms.gle/2fBADFwFQxuD3hBf7">ici</a>.
-                    </p>
+            <!-- Newsletter la plus récente -->
+            <div class="latest-newsletter animate-block">
+                <h3>Newsletter Avril 2026</h3>
+                <div class="newsletter-content">
+                    <p>Bonjour à tous ! Voici les dernières nouvelles et infos pour notre mariage du 15 août 2026</p>
+                    <p>On a hâte de vous voir !</p>
+                    <button class="show-newsletter-btn" data-file="news/news1.html">Voir la newsletter</button>
                 </div>
-                <div class="conseil-card animate-block">
-                    <img src="icones/hotel.png" alt="Réservation">
-                    <h3>Hôtels, AirBnB</h3>
-                    <p>
-                        Pour être au plus proche du lieu de l'événement, nous vous conseillons de chercher dans les villes suivantes : Plénée-Jugon, Plestan, Lamballe, Jugon-les-Lacs...
-                    </p>
-                </div>
-                <div class="conseil-card animate-block">
-                    <img src="icones/habitant.png" alt="Transport">
-                    <h3>Logement chez l'habitant</h3>
-                    <p>Si vous souhaitez être logé chez un membre de la famille ou chez des amis, veuillez remplir le formulaire en cliquant <a href="https://forms.gle/2fBADFwFQxuD3hBf7">ici</a>.</p>
-                </div>
-                
             </div>
+
+            <!-- Anciennes newsletters (menu déroulant ou liste) -->
+            <details class="old-newsletter animate-block">
+                <summary>Voir les newsletters précédentes</summary>
+                <ul>
+                    <li><a href="news/news1.html" class="load-old-newsletter" data-file="news/news1.html">Newsletter n°1 - Avril 2026</a></li>
+                </ul>
+            </details>
         </section>
+
 
         <footer class="footer">
             <div class="footer-container">
@@ -92,5 +88,6 @@
 
     <script src="burger.js"></script>
     <script src="script.js"></script>
+    <script src="news.js"></script>
 </body>
 </html>
