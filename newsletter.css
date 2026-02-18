@@ -1,5 +1,6 @@
 body, html {
     height: 100%;
+    max-width: 100%;
     margin: 0;
     overflow-x: hidden;
 }
@@ -15,14 +16,14 @@ main {
 }
 
 /* HEADER */
-.page-histoire .header {
+.header {
     opacity: 1 !important;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #F6F1EB; 
+    background-color: #F6F1EB;  
     transition: none;
 }
 
@@ -119,9 +120,9 @@ main {
 
 /* SECTION NEWSLETTER */
 .newsletter-section {
-    padding: 150px 5% 50px;
-    font-family: 'Playfair Display', serif;
+    padding: 150px 20px 50px;
     text-align: center;
+    font-family: 'Playfair Display', serif;
 }
 
 .newsletter-section h2 {
@@ -136,55 +137,108 @@ main {
 
 .latest-newsletter {
     background-color: #F0EFEA;
-    padding: 30px 20px;
+    padding: 25px;
     border-radius: 15px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
+    width: 100%;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
     box-shadow: 0 8px 15px rgba(0,0,0,0.05);
-    overflow: hidden;
-    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
 }
 
-.latest-newsletter,
-.latest-newsletter * {
-    box-sizing: border-box;
+.latest-newsletter.animate-block {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.latest-newsletter .loaded-newsletter {
+.news-inner {
     width: 100%;
-    max-width: 100%; /* prend toute la largeur du bloc */
-    overflow-x: hidden;
 }
 
-.latest-newsletter .news-inner {
-    width: 100%;
-    max-width: 100%;
+.news-header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.latest-newsletter img,
-.latest-newsletter svg {
-    max-width: 100% !important;
+.news-header img {
+    width: 200px;
     height: auto;
-    display: block;
 }
 
-.latest-newsletter h3 {
+.news-intro {
+    text-align: center;
+    color: #66633A;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.news-merci {
     font-family: 'Amoresa', serif;
+    font-size: 5rem;
+}
+
+.news-join {
+    font-family: 'Amoresa', cursive;
     font-size: 2rem;
-    color: #66633a;
-    margin-bottom: 20px;
+    margin-top: 15px;
 }
 
-.latest-newsletter p {
-    font-size: 1.2rem;
-    color: #292414;
+.news-le {
+    font-family: 'Perandory', serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+.news-date {
+    font-family: 'Amoresa', serif;
+    font-size: 3rem;
+    margin-top: 6px;
+}
+
+.news-delai {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Separator */
+.news-separator {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Info blocks */
+.news-info,
+.news-allergies,
+.news-logement,
+.news-logement-deadline,
+.news-logement-note {
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    color: #66633A;
+    margin-bottom: 15px;
 }
 
-.latest-newsletter a {
+.news-logement-deadline {
+    font-size: 1.2rem;
+}
+
+.news-logement-note {
+    font-style: italic;
+}
+
+.programme-journee {
+    font-family:'Perandory', serif; 
+    font-size:2rem; 
+    line-height:1.6; 
+    color:#66633A;
+}
+
+/* Links */
+.news-link {
     display: inline-block;
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
@@ -193,259 +247,75 @@ main {
     border: 1px solid #A3A687;
     padding: 8px 20px;
     border-radius: 8px;
+    margin-bottom: 30px;
     transition: all 0.3s;
 }
 
-.latest-newsletter a:hover {
+.news-link:hover {
     background-color: #A3A687;
     color: #F6F1EB;
-    word-break: break-word;
 }
 
-.show-newsletter-btn {
-    background-color: #66633a;
-    color: #F0EFEA;
-    border: none;
-    padding: 10px 20px;
+/* Signature */
+.news-signature {
+    font-size: 1.3rem;
+    color: #66633A;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.news-names {
+    font-family: 'Amoresa', serif;
+    font-size: 2rem;
+}
+
+/* Image */
+.news-image {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.news-image img {
+    width: 400px;
+    height: auto;
     border-radius: 15px;
+}
+
+/* Footer */
+.news-footer {
     font-size: 1rem;
-    cursor: pointer;
+    font-style: italic;
+    color: #66633A;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.show-newsletter-btn:hover {
-    background-color: #A3A687;
-}
-
-/* Anciennes newsletters (détails) */
-details {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 1rem;
-    color: #66633a;
-}
-
-details summary {
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-details ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-details ul li {
-    margin-bottom: 10px;
-}
-
-details ul li a {
-    color: #A3A687;
+.news-footer a {
+    color: #66633A;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
-details ul li a:hover {
-    color: #66633a;
-}
-
-/* MEDIA QUERY */
-/* Tablettes */
-@media screen and (max-width: 1024px) {
-    /* HEADER */
-    .header {
-        padding: 15px 30px;
-    }
-    .menu-links {
-        gap: 20px;
-        font-size: 1.1rem;
-    }
-    .blason {
-        height: 80px;
-    }
-
-    /*Newsletter */
-    .newsletter-section {
-        padding: 100px 5% 40px;
-    }
-
-    .newsletter-section h2 {
-        font-size: 2.5rem;
-    }
-
-    .latest-newsletter {
-        padding: 25px 15px;
-    }
-
-    .latest-newsletter h3 {
-        font-size: 1.8rem;
-    }
-
-    .latest-newsletter p {
-        font-size: 1.1rem;
-    }
-
-    .latest-newsletter a {
-        font-size: 1rem;
-        padding: 6px 18px;
-    }
-
-    .newsletter-section .show-newsletter-btn {
-        font-size: 0.95rem;
-        padding: 8px 18px;
-    }
-}
-
-/* Mobiles */
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-    }
-
-    .menu-links {
-        display: none; /* links cachés sur mobile */
-    }
-
-    /* Afficher le burger */
-    .burger-menu {
-        display: flex;
-    }
-
-    /* Newsletter */
     .newsletter-section {
         padding: 80px 5% 30px;
     }
-
     .newsletter-section h2 {
         font-size: 2rem;
     }
-
-    .latest-newsletter {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .latest-newsletter .loaded-newsletter {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .latest-newsletter h3 {
-        font-size: 1.5rem;
-    }
-
-    .latest-newsletter p {
-        font-size: 1rem;
-    }
-
-    .latest-newsletter a {
-        font-size: 0.95rem;
-        padding: 6px 15px;
-    }
-
-    details summary {
-        font-size: 1rem;
-    }
-
-    details ul li {
-        font-size: 0.95rem;
-    }
-
-    .newsletter-section .show-newsletter-btn {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-    }
-
-    /* Images réduites */
-    .latest-newsletter img {
-        max-width: 100%;
-        height: auto;
-    }
+    .news-merci { font-size: 3.5rem; }
+    .news-join, .news-le { font-size: 1.8rem; }
+    .news-date { font-size: 2.5rem; }
+    .news-link { font-size: 1rem; padding: 6px 15px; }
 }
 
-/* Très petits écrans */
 @media screen and (max-width: 480px) {
-    /* HEADER */
-    .burger-menu {
-        width: 25px;
-        height: 18px;
-    }
-
-    .burger-menu span {
-        height: 2.5px;
-    }
-
-    .overlay-content a {
-        font-size: 1.8rem;
-    }
-
-    .close-overlay {
-        font-size: 2.5rem;
-        top: 15px;
-        right: 15px;
-    }
-
-    /* Newsletter */
     .newsletter-section {
         padding: 60px 3% 20px;
     }
-
-    .newsletter-section h2 {
-        font-size: 1.8rem;
-    }
-
-    .latest-newsletter {
-        padding: 20px 10px;
-    }
-    .latest-newsletter .loaded-newsletter {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .latest-newsletter h3 {
-        font-size: 1.3rem;
-    }
-
-    .latest-newsletter p,
-    .latest-newsletter a {
-        font-size: 0.9rem;
-    }
-
-    .show-newsletter-btn {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-    }
-
-    details summary {
-        font-size: 0.95rem;
-    }
-
-    details ul li {
-        font-size: 0.85rem;
-    }
-
-    .overlay-content a {
-        font-size: 1.6rem;
-    }
-
-    .close-overlay {
-        font-size: 2rem;
-        top: 12px;
-        right: 12px;
-    }
-
-    /* Menu spacing */
-    .menu-links {
-        gap: 15px;
-    }
-
-    .newsletter-section .show-newsletter-btn {
-        font-size: 0.85rem;
-        padding: 6px 12px;
-    }
+    .newsletter-section h2 { font-size: 1.8rem; }
+    .news-merci { font-size: 3rem; }
+    .news-join, .news-le { font-size: 1.5rem; }
+    .news-date { font-size: 2rem; }
+    .news-link { font-size: 0.9rem; padding: 6px 12px; }
 }
