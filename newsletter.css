@@ -1,3 +1,19 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+main {
+    min-height: calc(100vh - 0px);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+}
+
 /* HEADER */
 .page-histoire .header {
     opacity: 1 !important;
@@ -127,6 +143,31 @@
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+.latest-newsletter,
+.latest-newsletter * {
+    box-sizing: border-box;
+}
+
+.latest-newsletter .loaded-newsletter {
+    width: 100%;
+    max-width: 100%; /* prend toute la largeur du bloc */
+    overflow-x: hidden;
+}
+
+.latest-newsletter .news-inner {
+    width: 100%;
+    max-width: 100%;
+}
+
+.latest-newsletter img,
+.latest-newsletter svg {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
 }
 
 .latest-newsletter h3 {
@@ -158,6 +199,7 @@
 .latest-newsletter a:hover {
     background-color: #A3A687;
     color: #F6F1EB;
+    word-break: break-word;
 }
 
 .show-newsletter-btn {
@@ -207,4 +249,203 @@ details ul li a {
 
 details ul li a:hover {
     color: #66633a;
+}
+
+/* MEDIA QUERY */
+/* Tablettes */
+@media screen and (max-width: 1024px) {
+    /* HEADER */
+    .header {
+        padding: 15px 30px;
+    }
+    .menu-links {
+        gap: 20px;
+        font-size: 1.1rem;
+    }
+    .blason {
+        height: 80px;
+    }
+
+    /*Newsletter */
+    .newsletter-section {
+        padding: 100px 5% 40px;
+    }
+
+    .newsletter-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .latest-newsletter {
+        padding: 25px 15px;
+    }
+
+    .latest-newsletter h3 {
+        font-size: 1.8rem;
+    }
+
+    .latest-newsletter p {
+        font-size: 1.1rem;
+    }
+
+    .latest-newsletter a {
+        font-size: 1rem;
+        padding: 6px 18px;
+    }
+
+    .newsletter-section .show-newsletter-btn {
+        font-size: 0.95rem;
+        padding: 8px 18px;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .menu-links {
+        display: none; /* links cachés sur mobile */
+    }
+
+    /* Afficher le burger */
+    .burger-menu {
+        display: flex;
+    }
+
+    /* Newsletter */
+    .newsletter-section {
+        padding: 80px 5% 30px;
+    }
+
+    .newsletter-section h2 {
+        font-size: 2rem;
+    }
+
+    .latest-newsletter {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .latest-newsletter .loaded-newsletter {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .latest-newsletter h3 {
+        font-size: 1.5rem;
+    }
+
+    .latest-newsletter p {
+        font-size: 1rem;
+    }
+
+    .latest-newsletter a {
+        font-size: 0.95rem;
+        padding: 6px 15px;
+    }
+
+    details summary {
+        font-size: 1rem;
+    }
+
+    details ul li {
+        font-size: 0.95rem;
+    }
+
+    .newsletter-section .show-newsletter-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    /* Images réduites */
+    .latest-newsletter img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+    /* HEADER */
+    .burger-menu {
+        width: 25px;
+        height: 18px;
+    }
+
+    .burger-menu span {
+        height: 2.5px;
+    }
+
+    .overlay-content a {
+        font-size: 1.8rem;
+    }
+
+    .close-overlay {
+        font-size: 2.5rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Newsletter */
+    .newsletter-section {
+        padding: 60px 3% 20px;
+    }
+
+    .newsletter-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .latest-newsletter {
+        padding: 20px 10px;
+    }
+    .latest-newsletter .loaded-newsletter {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .latest-newsletter h3 {
+        font-size: 1.3rem;
+    }
+
+    .latest-newsletter p,
+    .latest-newsletter a {
+        font-size: 0.9rem;
+    }
+
+    .show-newsletter-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    details summary {
+        font-size: 0.95rem;
+    }
+
+    details ul li {
+        font-size: 0.85rem;
+    }
+
+    .overlay-content a {
+        font-size: 1.6rem;
+    }
+
+    .close-overlay {
+        font-size: 2rem;
+        top: 12px;
+        right: 12px;
+    }
+
+    /* Menu spacing */
+    .menu-links {
+        gap: 15px;
+    }
+
+    .newsletter-section .show-newsletter-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
 }
